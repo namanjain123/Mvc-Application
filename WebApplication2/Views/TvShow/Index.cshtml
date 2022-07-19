@@ -1,0 +1,29 @@
+﻿@model IEnumerable<WebApplication2.Models.TvShow>
+
+@{
+    ViewBag.Title = "TvShow";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TvShows</h2>
+<p>
+    @Html.ActionLink("New TvShow", "New", "TvShow", null, new { @class = "btn btn-primary" })
+
+</p>
+<table id="Show_Id" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>TvShows_Name</th>
+            
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tvshow in Model)
+        {
+            <tr>@Html.ActionLink(tvshow.Name, "Edit", "TvShow", new { id = tvshow.Show_Id }, null)</tr>
+            
+        }
+    </tbody>
+</table>
+
